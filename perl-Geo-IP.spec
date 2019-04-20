@@ -4,11 +4,11 @@
 #
 Name     : perl-Geo-IP
 Version  : 1.51
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Geo-IP-1.51.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Geo-IP-1.51.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libg/libgeo-ip-perl/libgeo-ip-perl_1.51-1.debian.tar.xz
-Summary  : 'Look up location and network information by IP Address'
+Summary  : Look up location and network information by IP Address
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Geo-IP-license = %{version}-%{release}
@@ -23,6 +23,7 @@ Geo::IP - Look up location and network information by IP Address
 Summary: dev components for the perl-Geo-IP package.
 Group: Development
 Provides: perl-Geo-IP-devel = %{version}-%{release}
+Requires: perl-Geo-IP = %{version}-%{release}
 
 %description dev
 dev components for the perl-Geo-IP package.
@@ -41,7 +42,7 @@ license components for the perl-Geo-IP package.
 cd ..
 %setup -q -T -D -n Geo-IP-1.51 -b 1
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Geo-IP-1.51/deblicense/
+cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/Geo-IP-1.51/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -67,7 +68,6 @@ make TEST_VERBOSE=1 test
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-Geo-IP
 cp LICENSE %{buildroot}/usr/share/package-licenses/perl-Geo-IP/LICENSE
-cp deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-Geo-IP/deblicense_copyright
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -92,4 +92,3 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-Geo-IP/LICENSE
-/usr/share/package-licenses/perl-Geo-IP/deblicense_copyright
