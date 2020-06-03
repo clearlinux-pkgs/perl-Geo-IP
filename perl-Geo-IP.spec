@@ -4,7 +4,7 @@
 #
 Name     : perl-Geo-IP
 Version  : 1.51
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Geo-IP-1.51.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MAXMIND/Geo-IP-1.51.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libg/libgeo-ip-perl/libgeo-ip-perl_1.51-1.debian.tar.xz
@@ -103,6 +103,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/Geo/IP.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Geo/IP/Record.pm
-/usr/lib/perl5/vendor_perl/5.30.2/Geo/IP/Record.pod
+/usr/lib/perl5/vendor_perl/5.30.3/Geo/IP.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Geo/IP/Record.pm
+/usr/lib/perl5/vendor_perl/5.30.3/Geo/IP/Record.pod
