@@ -103,6 +103,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/Geo/IP.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Geo/IP/Record.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Geo/IP/Record.pod
+/usr/lib/perl5/vendor_perl/5.34.0/Geo/IP.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Geo/IP/Record.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Geo/IP/Record.pod
